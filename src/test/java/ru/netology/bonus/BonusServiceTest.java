@@ -28,8 +28,8 @@ class BonusServiceTest {
 
 
 
-
-    @CsvFileSource(resources = "/data.csv")
+    @ParameterizedTest
+    @CsvFileSource( resources = "/data.csv", numLinesToSkip = 1)
     void shouldCalculateUn(String test, long amount, boolean registered, long expected) {
         BonusService service = new BonusService();
 
